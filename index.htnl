@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FunHub</title>
+</head>
+<body style="background:#111;color:white;text-align:center;font-family:Arial;">
+    <h1>🎮 Welcome to FunHub!</h1>
+    <p>Your future home for awesome browser games.</p>
+
+    <button onclick="alert('Coming Soon!')">
+        Play Game
+    </button>
+</body>
+</html>
