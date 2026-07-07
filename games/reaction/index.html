@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reaction Time Test ⚡ — FunHub</title>
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
 
+<div class="topbar">
+  <div class="logo">FUN<span>HUB</span></div>
+  <a class="back" href="../../index.html">← All games</a>
+</div>
+
+<div class="game-wrap">
+  <h1>⚡ Reaction Time Test</h1>
+  <p class="sub">Wait for the box to turn green, then click as fast as you can. Click too early and you'll be publicly humiliated.</p>
+
+  <div class="panel">
+    <button id="box" style="width:100%; height:260px; border:none; border-radius:18px; font-size:1.4rem; font-weight:700; cursor:pointer; background:var(--ink-3); color:var(--white);">
+      Click to start
+    </button>
+
+    <div id="resultBox" style="display:none; text-align:center; margin-top:20px;">
+      <h2 id="timeResult" class="display" style="color:var(--yellow); font-size:2.4rem; margin:6px 0;"></h2>
+      <p id="compareResult" style="font-size:1.15rem; margin:0 0 16px;"></p>
+      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <input type="text" id="nameInput" placeholder="Your name" maxlength="20">
+        <button class="btn btn-mint" id="submitBtn">Submit to leaderboard</button>
+        <button class="btn btn-purple" id="retryBtn">Try again</button>
+      </div>
+      <p id="submitStatus" class="mono" style="color:var(--muted); margin-top:8px;"></p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3 style="margin-top:0;">🏆 Leaderboard (fastest ms)</h3>
+    <div class="leaderboard" id="leaderboard"></div>
+  </div>
+</div>
+
+<footer>lower is better. unlike golf, this is intuitive.</footer>
+
+<script src="../../config.js"></script>
+<script src="../../js/leaderboard.js"></script>
+<script src="reaction.js"></script>
+</body>
+</html>
