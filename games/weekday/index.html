@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekday Calculator 📅 — FunHub</title>
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
 
+<div class="topbar">
+  <div class="logo">FUN<span>HUB</span></div>
+  <a class="back" href="../../index.html">← All games</a>
+</div>
+
+<div class="game-wrap">
+  <h1>📅 Weekday Calculator</h1>
+  <p class="sub">The world's most over-engineered way to find out what tomorrow is.</p>
+
+  <div class="panel">
+    <p style="margin-top:0;">What day is it today?</p>
+    <select id="todaySelect" style="width:100%; margin-bottom:16px;">
+      <option value="0">Sunday</option>
+      <option value="1">Monday</option>
+      <option value="2">Tuesday</option>
+      <option value="3">Wednesday</option>
+      <option value="4">Thursday</option>
+      <option value="5">Friday</option>
+      <option value="6">Saturday</option>
+    </select>
+    <button class="btn btn-pink" id="calcBtn" style="width:100%;">Calculate tomorrow</button>
+
+    <div id="loadingBox" style="display:none; margin-top:20px; text-align:center;">
+      <p class="mono" id="loadingLine" style="color:var(--mint); font-size:1.05rem;"></p>
+    </div>
+
+    <div id="resultBox" style="display:none; margin-top:20px; text-align:center;">
+      <h2 id="tomorrowResult" class="display" style="color:var(--yellow); font-size:2.4rem;"></h2>
+      <p style="color:var(--muted);">Calculation confirmed with 100% scientific confidence.</p>
+      <button class="btn btn-purple" id="againBtn" style="margin-top:10px;">Do it again</button>
+    </div>
+  </div>
+</div>
+
+<footer>accuracy guaranteed by the same team that failed the math quiz.</footer>
+
+<script src="weekday.js"></script>
+</body>
+</html>
