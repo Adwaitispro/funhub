@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FunHub 🎮 — 20 games, 1 leaderboard, 0 chill</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+<div class="ticker">
+  <div class="ticker__track mono">
+    🏆 SCORES ARE SHARED — EVERYONE SEES YOUR SHAME &nbsp;•&nbsp; ♟️ CHESS AI NOW CHEATS ON PURPOSE &nbsp;•&nbsp; 📅 WEEKDAY CALCULATOR CONSULTS NASA &nbsp;•&nbsp; ➗ MATH QUIZ RIGGED BY DESIGN &nbsp;•&nbsp; 🖱️ CLICK FASTER THAN A SLOTH, PLEASE &nbsp;•&nbsp; 🏆 SCORES ARE SHARED — EVERYONE SEES YOUR SHAME &nbsp;•&nbsp; ♟️ CHESS AI NOW CHEATS ON PURPOSE &nbsp;•&nbsp; 📅 WEEKDAY CALCULATOR CONSULTS NASA &nbsp;•&nbsp; ➗ MATH QUIZ RIGGED BY DESIGN &nbsp;•&nbsp; 🖱️ CLICK FASTER THAN A SLOTH, PLEASE &nbsp;•&nbsp;
+  </div>
+</div>
+
+<div class="hero">
+  <h1>FUNHUB 🎮</h1>
+  <p>20 tiny games. one shared leaderboard. built to make your friends question their reflexes, their math, and their life choices. pick your poison below. 👇</p>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<footer>built with chaos & Claude · your scores are public, choose your name wisely 😏</footer>
+
+<script>
+  const games = [
+    { slug: "chess",       emoji: "♟️", title: "Chess vs AI", desc: "Easy, Medium, Hard… and DUMB AH MODE, where the AI plays anywhere and taunts you.", live: true },
+    { slug: "cps",         emoji: "🖱️", title: "CPS Test", desc: "Click as fast as you can. Get compared to actual animals. No dignity survives.", live: true },
+    { slug: "typing",      emoji: "⌨️", title: "Typing Speed Test", desc: "Random AI-generated paragraph. Type it. Find out your WPM.", live: true },
+    { slug: "mathquiz",    emoji: "➗", title: "Rigged Math Quiz", desc: "5 questions. Your correct answers are wrong. The dev failed math. It's fine.", live: true },
+    { slug: "weekday",     emoji: "📅", title: "Weekday Calculator", desc: "Tell it today's weekday. Wait 5 sci-fi seconds. Laugh at tomorrow.", live: true },
+    { slug: "reaction",    emoji: "⚡", title: "Reaction Time Test", desc: "Screen flashes. You click. Compared to an F1 driver and a sloth.", live: true },
+    { slug: "aim",         emoji: "🎯", title: "Aim Trainer", desc: "Dots appear. You destroy them. Accuracy & speed tracked.", live: false },
+    { slug: "memory",      emoji: "🧠", title: "Memory Match", desc: "Flip the emoji cards, find the pairs, beat the clock.", live: false },
+    { slug: "2048",        emoji: "🔢", title: "2048", desc: "Slide the tiles. Reach 2048. Rage optional but likely.", live: false },
+    { slug: "unscramble",  emoji: "🔤", title: "Word Unscramble Rush", desc: "Scrambled words, ticking clock, dopamine.", live: false },
+    { slug: "wouldyourather", emoji: "🤯", title: "Would You Rather: Impossible Edition", desc: "There is no good answer. Choose anyway.", live: false },
+    { slug: "balloon",     emoji: "🎈", title: "Balloon Pop Reflex", desc: "Pop balloons before they vanish. One bomb ends it all.", live: false },
+    { slug: "trivia",      emoji: "❓", title: "Trivia Blitz", desc: "10 rapid-fire questions. Speed adds bonus points.", live: false },
+    { slug: "numbermemory",emoji: "🔟", title: "Number Memory", desc: "A number flashes. Type it back. It keeps getting longer.", live: false },
+    { slug: "whackamole",  emoji: "🔨", title: "Whack-a-Mole", desc: "Moles pop up. You have zero mercy.", live: false },
+    { slug: "simonsays",   emoji: "🎨", title: "Simon Says", desc: "Repeat the growing color sequence. Don't blink.", live: false },
+    { slug: "snake",       emoji: "🐍", title: "Snake", desc: "The classic. Eat, grow, don't hit yourself. Ancient wisdom.", live: false },
+    { slug: "stroop",      emoji: "🌈", title: "Stroop Test", desc: "Name the ink color, not the word. Your brain will fight you.", live: false },
+    { slug: "impossiblebutton", emoji: "😤", title: "The Impossible Button", desc: "The ragebait finale. Just try to click it. We dare you.", live: false },
+    { slug: "rpsai",       emoji: "✊", title: "Rock Paper Scissors vs Cheating AI", desc: "The AI sees your move first. It won't admit that though.", live: false },
+  ];
+
+  const grid = document.getElementById("grid");
+  grid.innerHTML = games.map(g => `
+    <a class="card ${g.live ? "" : "disabled"}" ${g.live ? `href="games/${g.slug}/index.html"` : "tabindex='-1'"}>
+      <span class="tag ${g.live ? "" : "soon"}">${g.live ? "LIVE" : "SOON"}</span>
+      <span class="emoji">${g.emoji}</span>
+      <h3>${g.title}</h3>
+      <p>${g.desc}</p>
+    </a>
+  `).join("");
+</script>
+
+</body>
+</html>
