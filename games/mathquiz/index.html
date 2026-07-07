@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rigged Math Quiz ➗ — FunHub</title>
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
 
+<div class="topbar">
+  <div class="logo">FUN<span>HUB</span></div>
+  <a class="back" href="../../index.html">← All games</a>
+</div>
+
+<div class="game-wrap">
+  <h1>➗ Rigged Math Quiz</h1>
+  <p class="sub">5 questions. Question 1 is easy. If you get it right... it's marked wrong. The developer failed math. Questions 2-5 are the hardest thing humanity has ever produced. Good luck. 😈</p>
+
+  <div class="panel" id="quizPanel">
+    <p class="mono" id="qCounter" style="color:var(--muted); margin-top:0;"></p>
+    <h2 id="qText" style="font-size:1.4rem;"></h2>
+    <div id="options" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;"></div>
+    <p id="feedback" style="margin-top:16px; font-weight:700; min-height:24px;"></p>
+  </div>
+
+  <div class="panel" id="resultPanel" style="display:none; text-align:center;">
+    <h2 id="finalScore" class="display" style="color:var(--yellow); font-size:2.2rem;"></h2>
+    <p id="finalMsg" style="color:var(--muted);"></p>
+    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px;">
+      <input type="text" id="nameInput" placeholder="Your name" maxlength="20">
+      <button class="btn btn-mint" id="submitBtn">Submit to leaderboard</button>
+      <button class="btn btn-purple" id="retryBtn">Try again</button>
+    </div>
+    <p id="submitStatus" class="mono" style="color:var(--muted); margin-top:8px;"></p>
+  </div>
+
+  <div class="panel">
+    <h3 style="margin-top:0;">🏆 Leaderboard</h3>
+    <div class="leaderboard" id="leaderboard"></div>
+  </div>
+</div>
+
+<footer>we are not sorry.</footer>
+
+<script src="../../config.js"></script>
+<script src="../../js/leaderboard.js"></script>
+<script src="mathquiz.js"></script>
+</body>
+</html>
